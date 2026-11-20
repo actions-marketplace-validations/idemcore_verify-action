@@ -1,0 +1,41 @@
+name: Idemcore Receipt Verify
+description: Free offline checks of Idemcore AI receipts, public token logs and audit exports in your repository. No API key needed.
+author: MATEIAM COMPANY LIMITED
+
+branding:
+  icon: check-circle
+  color: green
+
+inputs:
+  path:
+    description: >
+      Glob (relative to the workspace) of files to check. Comma-separated
+      globs are allowed. Default: JSON, JSONL, NDJSON and token-log files.
+    required: false
+    default: "**/*.{json,jsonl,ndjson,log}"
+  keys:
+    description: >
+      Optional path to a JWK, JWK array or JWKS file of trusted signing keys.
+      When omitted, the bundled Idemcore production public key is used.
+    required: false
+    default: ""
+  fail_on_error:
+    description: Fail the step when any check fails.
+    required: false
+    default: "true"
+  require_files:
+    description: Fail when the glob matches no checkable files.
+    required: false
+    default: "true"
+
+outputs:
+  passed:
+    description: Number of checks that passed.
+  failed:
+    description: Number of checks that failed.
+  checked:
+    description: Total number of checks.
+
+runs:
+  using: node24
+  main: dist/index.mjs

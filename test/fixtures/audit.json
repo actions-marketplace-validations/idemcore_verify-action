@@ -1,0 +1,65 @@
+{
+  "keys": [
+    {
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "Kcly21XQKRfpn_Z0YHfMV7KGPmwZah3F6HKwVOb-Kkg",
+      "kid": "ed25519:6c0e94e4519f9579"
+    }
+  ],
+  "audit": {
+    "events": [
+      {
+        "tenant_id": "tnt_demo",
+        "seq": 1,
+        "ts": "2026-10-31T07:01:00.000Z",
+        "event_type": "receipt.issued",
+        "receipt_id": "rcpt_975db61c85d8c9e967952ba4",
+        "actor": "api",
+        "payload": {
+          "n": 1
+        },
+        "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "event_hash": "ac50361af0c3a5ca55b6a37957216c96537210cdc24d639af1ac55518fbe9d65"
+      },
+      {
+        "tenant_id": "tnt_demo",
+        "seq": 2,
+        "ts": "2026-10-31T07:02:00.000Z",
+        "event_type": "receipt.issued",
+        "receipt_id": "rcpt_8a6ffcd61a07378f55a78e2f",
+        "actor": "api",
+        "payload": {
+          "n": 2
+        },
+        "prev_hash": "ac50361af0c3a5ca55b6a37957216c96537210cdc24d639af1ac55518fbe9d65",
+        "event_hash": "dff0d2bf5d1d6e42e38d324e1a8e702dc5ea866a241a3d722353a4e9c901e3f3"
+      },
+      {
+        "tenant_id": "tnt_demo",
+        "seq": 3,
+        "ts": "2026-10-31T07:03:00.000Z",
+        "event_type": "receipt.viewed",
+        "receipt_id": "rcpt_975db61c85d8c9e967952ba4",
+        "actor": "api",
+        "payload": {
+          "n": 3
+        },
+        "prev_hash": "dff0d2bf5d1d6e42e38d324e1a8e702dc5ea866a241a3d722353a4e9c901e3f3",
+        "event_hash": "fb821456ce0e72b3799dffc5d08309c0ffd71b833e0cf8ddc10a2ef21fe24aa9"
+      }
+    ],
+    "roots": [
+      {
+        "tenant_id": "tnt_demo",
+        "day": "2026-10-31",
+        "count": 3,
+        "first_seq": 1,
+        "last_seq": 3,
+        "merkle_root": "ff9422432e62f6114cd7938ca884e02f59a8e5c9aea7a7bfa0d54baf7bbed66c",
+        "key_id": "ed25519:6c0e94e4519f9579",
+        "signature": "_SZsBX31llyWHZZzskiWwoRIoMA8lOVveb5Jb_zlqTqZFnhCqj6Y9P6iq_hqsDW7i9jz6giQs72vFEdQE5e_AQ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npm test
+      - name: Check dist is up to date
+        run: npm run build && git diff --exit-code dist
+      - name: Run the action on the public test vectors
+        uses: ./
+        with:
+          path: test/fixtures/vectors_r2.json
+          keys: test/fixtures/keys-r2.json
